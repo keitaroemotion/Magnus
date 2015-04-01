@@ -18,6 +18,7 @@ class Surface extends JPanel {
             BasicStroke.JOIN_BEVEL)
     g2d.setStroke(bs1)
     g2d.drawRect(15, 15, 80, 50)
+    g2d.drawString("魂Moomi",15,51)
 
     var bs2 = new BasicStroke(8, BasicStroke.CAP_ROUND,
             BasicStroke.JOIN_MITER)
@@ -32,26 +33,22 @@ class Surface extends JPanel {
 }
 
 object Tabula extends JFrame{
-  def Tabula() = {
-    initTabula()
-  }
 
   def initTabula() = {
     setTitle("test")
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     add(new Surface())
-    setSize(340, 110)
+    setSize(1340, 1110)
     setLocationRelativeTo(null)
   }
 
   def main(args:Array[String]) = {
     SwingUtilities.invokeLater(new Runnable() {
       override def run() {
-        //var js = new Tabula()
-        //js.setVisible(true)
-        new Tabula().setVisible(true)
+        initTabula()
+        setVisible(true)
       }
-    });
+    })
   }
 }
 
