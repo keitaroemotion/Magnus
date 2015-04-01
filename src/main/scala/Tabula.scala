@@ -4,13 +4,29 @@ import java.awt.Graphics2D
 import javax.swing.JPanel
 import javax.swing.JFrame
 import javax.swing.SwingUtilities
-
+import javax.imageio.ImageIO
 
 class Surface extends JPanel {
   override def paintComponent(g:Graphics) = {
       super.paintComponent(g)
       doDrawing(g)
   }
+
+  /**
+  def save() = {
+    var bImg = new BufferedImage(getWidth(), getWidth(), BufferedImage.TYPE_INT_RGB);
+    var cg = bImg.createGraphics();
+    paintAll(cg);
+    try {
+      if (ImageIO.write(bImg, "png", new File("./output_image.png"))) {
+        println("-- saved");
+      }
+    }catch{
+       case e:Exception=> println(e)
+    }
+  }
+  */
+
 
   def doDrawing(g:Graphics) = {
     var g2d = g.asInstanceOf[Graphics2D]
