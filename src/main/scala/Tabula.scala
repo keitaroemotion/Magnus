@@ -1,4 +1,5 @@
 import java.awt.BasicStroke
+import java.awt._
 import java.awt.Graphics
 import java.awt.Graphics2D
 import javax.swing.JPanel
@@ -27,8 +28,16 @@ class Surface extends JPanel {
   }
   */
 
+  def get_image(g:Graphics, path:String) = {
+    var res = g.drawImage(Toolkit.getDefaultToolkit().getImage(path), 0, 0, null)
+    println(res)
+  }
+
 
   def doDrawing(g:Graphics) = {
+   //get_image(g, "src/data/gnavi.jpg")
+   get_image(g, "gnavi.jpg")
+   /**
     var g2d = g.asInstanceOf[Graphics2D]
     var bs1 = new BasicStroke(8, BasicStroke.CAP_ROUND,
             BasicStroke.JOIN_BEVEL)
@@ -45,26 +54,57 @@ class Surface extends JPanel {
             BasicStroke.JOIN_ROUND)
     g2d.setStroke(bs3)
     g2d.drawRect(235, 15, 80, 50)
+    */
   }
 }
 
 object Tabula extends JFrame{
+  def resize(args:Array[String]) = {
 
-  def initTabula() = {
+  }
+
+
+
+  def initTabula(args:Array[String]) = {
     setTitle("test")
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     add(new Surface())
-    setSize(1340, 1110)
+    // paper size
+    setSize(500, 1110)
     setLocationRelativeTo(null)
   }
 
   def main(args:Array[String]) = {
-    SwingUtilities.invokeLater(new Runnable() {
-      override def run() {
-        initTabula()
-        setVisible(true)
-      }
-    })
+
+    def curro(func:Array[String] => Unit, args:Array[String]) = {
+      SwingUtilities.invokeLater(new Runnable() {
+        override def run() {
+          func(args)
+          setVisible(true)
+        }
+      })
+    }
+
+   args(0) match {
+     case "magnus" => curro(initTabula, args)
+     case "resize" => curro(resize, args)
+     case _ => println("need args")
+   }
+
+
+    /**
+    var operation = args(0)
+    operation match {
+      case "ja" =>
+        SwingUtilities.invokeLater(new Runnable() {
+          override def run() {
+            initTabula()
+            setVisible(true)
+          }
+        })
+      case "" => println("non sequitur")
+      case _ =>
+    }
+   */
   }
 }
-
