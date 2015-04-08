@@ -1,0 +1,9 @@
+[0m[[0minfo[0m] [0mGanttSpec[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[37maaa should[0m[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[32m+[0m parse data (6 ms)[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[32m+[0m test draw with null info (81 ms)[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0mTotal for specification GanttSpec[0m
+[0m[[0minfo[0m] [0m[36mFinished in 0 ms[0m[0m
+[0m[[0minfo[0m] [0m[36m[0m[36m2 examples, 0 failure, 0 error[0m[0m

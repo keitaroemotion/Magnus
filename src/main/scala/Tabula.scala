@@ -63,8 +63,6 @@ object Tabula extends JFrame{
 
   }
 
-
-
   def initTabula(args:Array[String]) = {
     setTitle("test")
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -85,12 +83,14 @@ object Tabula extends JFrame{
       })
     }
 
+   //qua est desirable when implemented:
+   // implement Gantt Chart related pictures....
+
    args(0) match {
      case "magnus" => curro(initTabula, args)
      case "resize" => curro(resize, args)
      case _ => println("need args")
    }
-
 
     /**
     var operation = args(0)
